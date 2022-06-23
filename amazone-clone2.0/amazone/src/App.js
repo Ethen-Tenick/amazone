@@ -1,9 +1,11 @@
 import './App.css';
+import SignIn from './Functions/SignIn';
 
 function App() {
   return (
     <div className="App">
-      <h3>hello</h3>
+      <h1>hello</h1>
+      <SignIn />
     </div>
   );
 }
