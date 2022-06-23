@@ -49,3 +49,11 @@ APP FEATURES :::
 LOW MEMORY
 FAST LOAD
 }}}
+
+
+App development Process :
+{{
+    [First] make all the functionalities aside with Usestate array
+    [Second] make the ui and Intergrate the funtionality 
+    [Third] make the app the app seemlessly good 👆🏽 {[APP FEATURES]}
+}}
