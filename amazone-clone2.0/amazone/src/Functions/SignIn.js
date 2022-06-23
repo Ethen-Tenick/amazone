@@ -18,7 +18,7 @@ function SignIn() {
     const passwordValidity = (password) => {
         // the length and a mixture of strings characters until the right 
         // amount is detected and should be of right length
-        (password.length > 6 && (password.search('#') > 0 || password.search('$') > 0 || password.search('&') > 0 || password.search('*') > 0)) ? console.log('password is strong') : console.log('weak password')
+        (password.length > 6 && (password.search('$') > 0)) ? console.log('password is strong :' + password) : console.log('weak password :' + password)
     }
 
     return (
