@@ -13,10 +13,12 @@ function SignIn() {
     }
     const emailValidity = (email) => {
         // the presence of .com and @ in text to continue either disable signIn button and post pop up
-        console.log(email.search('@'))
+        (email.search('@') > 0) ? console.log("email is okay") : console.log('email missing @')
     }
     const passwordValidity = (password) => {
-        // the length and a mixture of strings characters until the right amount is detected and should be of right length
+        // the length and a mixture of strings characters until the right 
+        // amount is detected and should be of right length
+        (password.length > 6 && (password.search('#') > 0 || password.search('$') > 0 || password.search('&') > 0 || password.search('*') > 0)) ? console.log('password is strong') : console.log('weak password')
     }
 
     return (
