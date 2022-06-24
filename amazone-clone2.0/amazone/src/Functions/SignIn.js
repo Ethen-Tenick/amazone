@@ -102,10 +102,10 @@ function SignIn() {
                     <input type='password' onChange={e => { setLoginPassword(e.target.value) }} />
                 </div>
                 <button className='bluebtn' onClick={() => { searchUser() }}>Login</button>
+                {
+                    (userPresence) ? <h5>Bienvenue</h5> : <h5>No such User</h5>
+                }
             </div>
-            {
-                (userPresence) ? <h5>Bienvenue</h5> : <h5>No such User</h5>
-            }
         </div>
     )
 }
