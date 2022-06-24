@@ -38,17 +38,14 @@ function Searchbar() {
             category: 'clothes'
         }
     ])
-    const [eachDataName, setEachDataName] = useState([])
     const [searchResult, setSearchResult] = useState([])
 
     const startSearch = () => {
-
         // length
         // starting character
         // going foward in character matching
 
         const turnedArray = inputData.split('') //split string input into array
-
         const allNames = () => {
             dataBase.map((item) => {
                 setSearchResult((prev) => [...prev, item.name])   // put the names of all items in the setResultNames variable
@@ -80,9 +77,63 @@ function Searchbar() {
                 }
             }
         })
-        console.log('CONTINUE TO TYPE THEN THE FINALL RESULT WILL BE SHOWN')
+        console.log('CONTINUE TO TYPE THEN THE FINALL RESULT WILL BE')
     }
+    const PrototypeStartSearch = () => {
 
+
+        const turnedArray = inputData.split('') //split string input into array
+        const allNames = () => {
+            dataBase.map((item) => {
+                setSearchResult((prev) => [...prev, item.name])   // put the names of all items in the setResultNames variable
+            })
+        }
+        allNames()
+
+
+        const searchStepOne = searchResult.filter((item) => {      //filter the length of the result
+            const eachDataName = item.split('')
+            if (eachDataName.length == turnedArray.length) {
+                return eachDataName
+            } else {
+                console.log('disqualified by length :' + eachDataName)
+            }
+        })
+        const searchStepTwo = searchStepOne.filter((item) => {         // filter first character
+            const eachDataName = item.split('')
+            if (eachDataName[0] == turnedArray[0]) {
+                return eachDataName
+            } else {
+                console.log('disqualified by first character :' + eachDataName)
+            }
+        })
+
+        const searchStepThree = searchStepTwo.filter((item) => {         // filter second character
+            const eachDataName = item.split('')
+            if (eachDataName[1] == turnedArray[1]) {
+                return eachDataName
+            } else {
+                console.log('disqualified by second character :' + eachDataName)
+            }
+        })
+        const searchStepFour = searchStepThree.filter((item) => {         // filter third character
+            const eachDataName = item.split('')
+            if (eachDataName[2] == turnedArray[2]) {
+                return eachDataName
+            } else {
+                console.log('disqualified by Third character :' + eachDataName)
+            }
+        })
+        const searchStepFive = searchStepFour.filter((item) => {         // filter last character
+            const eachDataName = item.split('')
+            if (eachDataName[-1] == turnedArray[-1]) {
+                return eachDataName
+            } else {
+                console.log('disqualified by last character :' + eachDataName)
+            }
+        })
+        searchStepFive()
+    }
 
     return (
         <div className='search_main_container'>
