@@ -39,9 +39,10 @@ function SignIn() {
     }
 
     const sendToDatabase = () => {
-        setDataBase((prev) => [...prev, { email, password }]);
-        console.log('done')
-        console.log(dataBase)
+        if (password.length > 0 && email.length > 0) {
+            setDataBase((prev) => [...prev, { email, password }]);
+            console.log('done')
+        }
     }
 
     //////////////////////////////// THE SIGNIN END  ////////////////////////////////
@@ -54,7 +55,7 @@ function SignIn() {
 
     const searchUser = () => {
         dataBase.map((person) => {
-            (person.email == loginEmail && person.password == loginPassword) ? console.log('accont found') : console.log('no such account')
+            (person.email == loginEmail && person.password == loginPassword) ? setUserPresence(true) : setUserPresence(false)
         })
     }
 
@@ -85,24 +86,26 @@ function SignIn() {
                     }
                 </div>
                 {
-                    (condition) ? <button className='greenbtn' onClick={() => { sendToDatabase() }}>SignUp</button> : <button className='redbtn'>SignUp</button>
+                    (condition) ? <button className='greenbtn' onClick={() => { sendToDatabase(); console.log('Succesfully Signed Up') }}>SignUp</button> : <button className='redbtn'>SignUp</button>
                 }
             </div>
 
 
             <div className='LogIn_main_container'>
-                <h4>The Login part</h4>
+                <h2>The Login part</h2>
                 <div className='email_log'>
                     <label>Email</label>
-                    <input placeholder='example@gmail.com' onClick={e => { setLoginEmail(e.target.value) }} />
+                    <input placeholder='example@gmail.com' onChange={e => { setLoginEmail(e.target.value) }} />
                 </div>
                 <div className='password_log'>
                     <label>password</label>
-                    <input type='password' onClick={e => { setLoginPassword(e.target.value) }} />
+                    <input type='password' onChange={e => { setLoginPassword(e.target.value) }} />
                 </div>
                 <button className='bluebtn' onClick={() => { searchUser() }}>Login</button>
             </div>
-
+            {
+                (userPresence) ? <h5>Bienvenue</h5> : <h5>No such User</h5>
+            }
         </div>
     )
 }
