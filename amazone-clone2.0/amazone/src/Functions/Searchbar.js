@@ -57,27 +57,27 @@ function Searchbar() {
         searchResult.map((item) => {
             const eachDataName = item.split('')             //split each item in the searchResult to make each one an array of letters
             for (var i = 0; i < turnedArray.length; i++) {
-                if (eachDataName.length == turnedArray.length) {
-                    setSearchList(eachDataName)      // take each item and compare its first character with the first character of the input
-                    if (eachDataName[0] == turnedArray[0]) {
+                if (eachDataName[0] == turnedArray[0]) {
+                    setSearchList(eachDataName)
+                    if (eachDataName[1] == turnedArray[1]) {
                         setSearchList(eachDataName)
-                        if (eachDataName[1] == turnedArray[1]) {
+                        if (eachDataName[-1] == turnedArray[-1]) {
                             setSearchList(eachDataName)
-                            if (eachDataName[-1] == turnedArray[-1]) {
-                                setSearchList(eachDataName)
+                            if (eachDataName.length == turnedArray.length) {
+                                setSearchList(eachDataName)      // take each item and compare its first character with the first character of the input
                             } else {
-                                console.log('item not found')
+                                return
                             }
                         } else {
-                            console.log(eachDataName + 'the second character different')
+                            return
                         }
 
                     } else {
-                        console.log(eachDataName + ' first character different')
+                        return
                     }
 
                 } else {
-                    console.log(eachDataName + '  is not of same length')
+                    return
                 }
             }
         })
