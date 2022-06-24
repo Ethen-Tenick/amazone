@@ -10,6 +10,14 @@ function Searchbar() {
             category: 'vegetables'
         },
         {
+            name: 'nice',
+            category: 'shoes'
+        },
+        {
+            name: 'wild',
+            category: 'adventure'
+        },
+        {
             name: 'wine',
             category: 'beverage'
         },
@@ -40,6 +48,7 @@ function Searchbar() {
     ])
     const [searchResult, setSearchResult] = useState([])
     const [searchList, setSearchList] = useState([])
+    const maths = Math.floor(Math.random() * 100)
 
     const startSearch = () => {
         // length
@@ -156,7 +165,7 @@ function Searchbar() {
                 <h4>This are the Results</h4>
                 {
                     searchList.map((item) => {
-                        return <h6 key={item}>{item}</h6>
+                        return <h6 key={item + maths}>{item}</h6>
                     })
                 }
             </div>
