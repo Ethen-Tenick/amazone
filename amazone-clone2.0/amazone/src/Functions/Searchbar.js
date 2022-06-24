@@ -39,6 +39,7 @@ function Searchbar() {
         }
     ])
     const [searchResult, setSearchResult] = useState([])
+    const [searchList, setSearchList] = useState([])
 
     const startSearch = () => {
         // length
@@ -56,11 +57,14 @@ function Searchbar() {
         searchResult.map((item) => {
             const eachDataName = item.split('')             //split each item in the searchResult to make each one an array of letters
             for (var i = 0; i < turnedArray.length; i++) {
-                if (eachDataName.length == turnedArray.length) {      // take each item and compare its first character with the first character of the input
+                if (eachDataName.length == turnedArray.length) {
+                    setSearchList(eachDataName)      // take each item and compare its first character with the first character of the input
                     if (eachDataName[0] == turnedArray[0]) {
+                        setSearchList(eachDataName)
                         if (eachDataName[1] == turnedArray[1]) {
+                            setSearchList(eachDataName)
                             if (eachDataName[-1] == turnedArray[-1]) {
-                                console.log(eachDataName + ' was found')
+                                setSearchList(eachDataName)
                             } else {
                                 console.log('item not found')
                             }
@@ -145,6 +149,14 @@ function Searchbar() {
                 {
                     dataBase.map(item => {
                         return <h5 key={item.name}>{item.name}</h5>
+                    })
+                }
+            </div>
+            <div className='live_result_test'>
+                <h4>This are the Results</h4>
+                {
+                    searchList.map((item) => {
+                        <h6 key={item}>{item}</h6>
                     })
                 }
             </div>
