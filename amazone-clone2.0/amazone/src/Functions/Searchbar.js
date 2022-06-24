@@ -23,7 +23,7 @@ function Searchbar() {
             category: 'beverage'
         },
         {
-            name: 'iphone',
+            name: 'iphone 7',
             category: 'gadgets'
         },
         {
@@ -35,7 +35,7 @@ function Searchbar() {
             category: 'vegetables'
         },
         {
-            name: 'fruit juice',
+            name: 'iphone 4',
             category: 'beverage'
         },
         {
@@ -68,12 +68,12 @@ function Searchbar() {
             const eachDataName = item.split('')             //split each item in the searchResult to make each one an array of letters
             for (var i = 0; i < turnedArray.length; i++) {
                 if (eachDataName[0] == turnedArray[0]) {        // take each item and compare its first character with the first character of the input
-                    setSearchList(eachDataName)
-                    if (eachDataName[1] == turnedArray[1]) {
+                    setSearchList(prev => [...prev, eachDataName])
+                    if (eachDataName[1] == turnedArray[1]) {        //function use ends ,below is not used
                         if (eachDataName[2] == turnedArray[2]) {
-                            setSearchList(prev => [...prev, eachDataName])
+                            // setSearchList(prev => [...prev, eachDataName])
                             if (eachDataName.length == turnedArray.length) {
-                                // setSearchList(eachDataName)
+                                // setSearchList(eachDataName)                  //// end of not used  loop
                             } else {
                                 return
                             }
