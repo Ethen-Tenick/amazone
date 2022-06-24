@@ -1,0 +1,10 @@
+.greenbtn{
+    background-color: green;
+    color: white;
+    padding: 14px 16px;
+}
+.redbtn{
+    background-color: red;
+    color: white;
+    padding: 14px 16px;
+}
