@@ -38,8 +38,8 @@ function Searchbar() {
             category: 'clothes'
         }
     ])
-    const [searchResult, setSearchResult] = useState([])
     const [eachDataName, setEachDataName] = useState([])
+    const [searchResult, setSearchResult] = useState([])
 
     const startSearch = () => {
 
@@ -51,9 +51,10 @@ function Searchbar() {
 
         const allNames = () => {
             dataBase.map((item) => {
-                setSearchResult(item.name)   // put the names of all items in the setResultNames variable
+                setSearchResult((prev) => [...prev, item.name])   // put the names of all items in the setResultNames variable
             })
         }
+        allNames()
 
         searchResult.map((item) => {
             const eachDataName = item.split('')             //split each item in the searchResult to make each one an array of letters
@@ -79,6 +80,7 @@ function Searchbar() {
                 }
             }
         })
+        console.log('CONTINUE TO TYPE THEN THE FINALL RESULT WILL BE SHOWN')
     }
 
 
