@@ -156,7 +156,7 @@ function Searchbar() {
                 <h4>This are the Results</h4>
                 {
                     searchList.map((item) => {
-                        <h6 key={item}>{item}</h6>
+                        return <h6 key={item}>{item}</h6>
                     })
                 }
             </div>
