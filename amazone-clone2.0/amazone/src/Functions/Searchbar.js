@@ -67,14 +67,12 @@ function Searchbar() {
         searchResult.map((item) => {
             const eachDataName = item.split('')             //split each item in the searchResult to make each one an array of letters
             for (var i = 0; i < turnedArray.length; i++) {
-                if (eachDataName[0] == turnedArray[0]) {
-                    setSearchList(prev => [...prev, eachDataName])
+                if (eachDataName[0] == turnedArray[0]) {        // take each item and compare its first character with the first character of the input
+                    setSearchList(eachDataName)
                     if (eachDataName[1] == turnedArray[1]) {
-                        setSearchList(prev => [...prev, eachDataName])
-                        if (eachDataName[-1] == turnedArray[-1]) {
-                            setSearchList(prev => [...prev, eachDataName])
+                        if (eachDataName[2] == turnedArray[2]) {
                             if (eachDataName.length == turnedArray.length) {
-                                setSearchList(prev => [...prev, eachDataName])      // take each item and compare its first character with the first character of the input
+                                // setSearchList(eachDataName)
                             } else {
                                 return
                             }
@@ -91,9 +89,9 @@ function Searchbar() {
                 }
             }
         })
-        setFinalResult(searchList.slice(0, 3))
         console.log('CONTINUE TO TYPE THEN THE FINALL RESULT WILL BE')
     }
+
     const PrototypeStartSearch = () => {
 
 
@@ -166,7 +164,7 @@ function Searchbar() {
             <div className='live_result_test'>
                 <h4>This are the Results</h4>
                 {
-                    finalResult.map((item) => {
+                    searchList.map((item) => {
                         return <h6 key={item + maths}>{item}</h6>
                     })
                 }
