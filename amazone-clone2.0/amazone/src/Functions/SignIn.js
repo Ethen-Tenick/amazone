@@ -4,6 +4,10 @@ import './SignIn.css'
 
 function SignIn() {
 
+    /////////////////////////////////// GLOBAL VARIABLES ////////////////////////////
+
+    const [dataBase, setDataBase] = useState([])
+
     /////////////////////////////////// THE SIGNIN PART ////////////////////////////
 
     const [condition, setCondition] = useState(false)
@@ -34,10 +38,25 @@ function SignIn() {
         }
     }
 
+    const sendToDatabase = () => {
+        setDataBase((prev) => [...prev, { email, password }]);
+        console.log('done')
+        console.log(dataBase)
+    }
+
     //////////////////////////////// THE SIGNIN END  ////////////////////////////////
 
     //////////////////////////////// THE LOGIN PART   ////////////////////////////////
+    const [userPresence, setUserPresence] = useState(false)
+    const [loginPassword, setLoginPassword] = useState([])
+    const [loginEmail, setLoginEmail] = useState([])
 
+
+    const searchUser = () => {
+        dataBase.map((person) => {
+            (person.email == loginEmail && person.password == loginPassword) ? console.log('accont found') : console.log('no such account')
+        })
+    }
 
     //////////////////////////////// THE LOGIN END   ////////////////////////////////
 
@@ -45,8 +64,8 @@ function SignIn() {
         <div className='Main_credectial_container'>
             <h2>Credential Detail Functionality</h2>
 
-            <div className='SignIn_main_container'>
-                <h4>The Signin part</h4>
+            <div className='SignUp_main_container'>
+                <h4>The SignUp part</h4>
                 <div className='email'>
                     <label>Email</label>
                     <input type='email' placeholder='email@gmail.com' onChange={e => { setEmail(e.target.value); emailValidity(email) }} />
@@ -62,17 +81,26 @@ function SignIn() {
                 </div>
                 <div className='passwordverification'>
                     {
-                        (passwordCondition) ? <h3>Now that password is tough</h3> : <h3>Incooperate special characters & password must be above 6 characters</h3>
+                        (passwordCondition) ? <h3>Now that password is tough</h3> : <h3>Incooperate special characters</h3>
                     }
                 </div>
                 {
-                    (condition) ? <button className='greenbtn'>SignIn</button> : <button className='redbtn'>SignIn</button>
+                    (condition) ? <button className='greenbtn' onClick={() => { sendToDatabase() }}>SignUp</button> : <button className='redbtn'>SignUp</button>
                 }
             </div>
 
 
             <div className='LogIn_main_container'>
                 <h4>The Login part</h4>
+                <div className='email_log'>
+                    <label>Email</label>
+                    <input placeholder='example@gmail.com' onClick={e => { setLoginEmail(e.target.value) }} />
+                </div>
+                <div className='password_log'>
+                    <label>password</label>
+                    <input type='password' onClick={e => { setLoginPassword(e.target.value) }} />
+                </div>
+                <button className='bluebtn' onClick={() => { searchUser() }}>Login</button>
             </div>
 
         </div>
