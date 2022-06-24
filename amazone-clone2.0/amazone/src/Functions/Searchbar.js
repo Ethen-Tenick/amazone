@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Search.css'
+import { v4 } from 'uuid'
 
 function Searchbar() {
 
@@ -49,7 +50,6 @@ function Searchbar() {
     const [searchResult, setSearchResult] = useState([])
     const [finalResult, setFinalResult] = useState([])
     const [searchList, setSearchList] = useState([])
-    const maths = Math.floor(Math.random() * 100)
 
     const startSearch = () => {
         // length
@@ -165,7 +165,7 @@ function Searchbar() {
                 <h4>This are the Results</h4>
                 {
                     searchList.map((item) => {
-                        return <h6 key={item + maths}>{item}</h6>
+                        return <h6 key={item + v4()}>{item}</h6>
                     })
                 }
             </div>
