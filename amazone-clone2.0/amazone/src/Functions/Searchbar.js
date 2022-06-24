@@ -57,12 +57,12 @@ function Searchbar() {
         // going foward in character matching
 
         const turnedArray = inputData.split('') //split string input into array
-        const allNames = () => {
+        const itemNames = () => {
             dataBase.map((item) => {
                 setSearchResult((prev) => [...prev, item.name])   // put the names of all items in the setResultNames variable
             })
         }
-        allNames()
+        itemNames()
 
         searchResult.map((item) => {
             const eachDataName = item.split('')             //split each item in the searchResult to make each one an array of letters
@@ -71,6 +71,7 @@ function Searchbar() {
                     setSearchList(eachDataName)
                     if (eachDataName[1] == turnedArray[1]) {
                         if (eachDataName[2] == turnedArray[2]) {
+                            setSearchList(prev => [...prev, eachDataName])
                             if (eachDataName.length == turnedArray.length) {
                                 // setSearchList(eachDataName)
                             } else {
@@ -104,7 +105,7 @@ function Searchbar() {
         allNames()
 
 
-        const searchStepOne = searchResult.filter((item) => {      //filter the length of the result
+        const searchStepFour = searchResult.filter((item) => {      //filter the length of the result
             const eachDataName = item.split('')
             if (eachDataName.length == turnedArray.length) {
                 return eachDataName
@@ -112,7 +113,7 @@ function Searchbar() {
                 console.log('disqualified by length :' + eachDataName)
             }
         })
-        const searchStepTwo = searchStepOne.filter((item) => {         // filter first character
+        const searchStepOne = searchStepOne.filter((item) => {         // filter first character
             const eachDataName = item.split('')
             if (eachDataName[0] == turnedArray[0]) {
                 return eachDataName
@@ -121,18 +122,20 @@ function Searchbar() {
             }
         })
 
-        const searchStepThree = searchStepTwo.filter((item) => {         // filter second character
+        const searchStepTwo = searchStepTwo.filter((item) => {         // filter second character
             const eachDataName = item.split('')
             if (eachDataName[1] == turnedArray[1]) {
                 return eachDataName
+                setFinalResult(eachDataName)
             } else {
                 console.log('disqualified by second character :' + eachDataName)
             }
         })
-        const searchStepFour = searchStepThree.filter((item) => {         // filter third character
+        const searchStepThree = searchStepThree.filter((item) => {         // filter third character
             const eachDataName = item.split('')
             if (eachDataName[2] == turnedArray[2]) {
                 return eachDataName
+                setFinalResult(eachDataName)
             } else {
                 console.log('disqualified by Third character :' + eachDataName)
             }
@@ -145,7 +148,7 @@ function Searchbar() {
                 console.log('disqualified by last character :' + eachDataName)
             }
         })
-        searchStepFive()
+        searchStepThree()
     }
 
     return (
