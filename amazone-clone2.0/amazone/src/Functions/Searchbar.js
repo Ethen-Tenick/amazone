@@ -47,6 +47,7 @@ function Searchbar() {
         }
     ])
     const [searchResult, setSearchResult] = useState([])
+    const [finalResult, setFinalResult] = useState([])
     const [searchList, setSearchList] = useState([])
     const maths = Math.floor(Math.random() * 100)
 
@@ -67,13 +68,13 @@ function Searchbar() {
             const eachDataName = item.split('')             //split each item in the searchResult to make each one an array of letters
             for (var i = 0; i < turnedArray.length; i++) {
                 if (eachDataName[0] == turnedArray[0]) {
-                    setSearchList(eachDataName)
+                    setSearchList(prev => [...prev, eachDataName])
                     if (eachDataName[1] == turnedArray[1]) {
-                        setSearchList(eachDataName)
+                        setSearchList(prev => [...prev, eachDataName])
                         if (eachDataName[-1] == turnedArray[-1]) {
-                            setSearchList(eachDataName)
+                            setSearchList(prev => [...prev, eachDataName])
                             if (eachDataName.length == turnedArray.length) {
-                                setSearchList(eachDataName)      // take each item and compare its first character with the first character of the input
+                                setSearchList(prev => [...prev, eachDataName])      // take each item and compare its first character with the first character of the input
                             } else {
                                 return
                             }
@@ -90,6 +91,7 @@ function Searchbar() {
                 }
             }
         })
+        setFinalResult(searchList.slice(0, 3))
         console.log('CONTINUE TO TYPE THEN THE FINALL RESULT WILL BE')
     }
     const PrototypeStartSearch = () => {
@@ -164,7 +166,7 @@ function Searchbar() {
             <div className='live_result_test'>
                 <h4>This are the Results</h4>
                 {
-                    searchList.map((item) => {
+                    finalResult.map((item) => {
                         return <h6 key={item + maths}>{item}</h6>
                     })
                 }
