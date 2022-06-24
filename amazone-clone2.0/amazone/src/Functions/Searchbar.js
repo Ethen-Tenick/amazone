@@ -71,9 +71,7 @@ function Searchbar() {
                     setSearchList(prev => [...prev, eachDataName])
                     if (eachDataName[1] == turnedArray[1]) {        //function use ends ,below is not used
                         if (eachDataName[2] == turnedArray[2]) {
-                            // setSearchList(prev => [...prev, eachDataName])
-                            if (eachDataName.length == turnedArray.length) {
-                                // setSearchList(eachDataName)                  //// end of not used  loop
+                            if (eachDataName.length == turnedArray.length) {         //// end of not used  loop
                             } else {
                                 return
                             }
@@ -176,4 +174,6 @@ function Searchbar() {
     )
 }
 
+
 export default Searchbar
+
