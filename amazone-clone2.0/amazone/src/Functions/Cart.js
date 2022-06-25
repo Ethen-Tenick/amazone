@@ -6,13 +6,12 @@ function Cart() {
     const [condition, setCondition] = useState(false)
     const [dataBaseCondition, setDataBaseCondition] = useState(false)
 
-    const [totalPrice, setTotalPrice] = useState([])
-    const [price, setPrice] = useState([])
-    const [totalcount, setTotalcount] = useState(0)
+    const [totalPrice, setTotalPrice] = useState(0)
+    const [totalcount, setTotalcount] = useState([])
 
     const [itemName, setItemName] = useState([])
     const [itemId, setItemId] = useState([])
-    const [itemPrice, setItemPrice] = useState([])
+    const [itemPrice, setItemPrice] = useState(0)
 
     const [getData, setGetData] = useState([
         {
@@ -33,7 +32,7 @@ function Cart() {
         {
             itemName: 'Bugatti',
             itemId: 'Third class',
-            itemPrice: 500
+            itemPrice: 600
         }
     ])
 
@@ -45,11 +44,16 @@ function Cart() {
     // set the total to the variable of settotal price
     useEffect(() => {
         getData.map(item => {
-            setPrice((prev) => [...prev, item.itemPrice])
+            setTotalcount(prev => [...prev, (totalcount + item.itemPrice)])
         })
-        for (var i = 0; i < price.length; i++) {
-            setTotalcount(totalcount + price[i])
-        }
+
+        //var count = 0;
+        // for (var i = 0; i < totalcount.length; i++) {
+        //     count + totalcount[i]
+        // }
+        // setTotalPrice(count)
+        // console.log(totalcount)
+
     }, [getData])
 
     // end of the set to total variable function
@@ -72,18 +76,19 @@ function Cart() {
                     <button onClick={() => { addToCart() }}>Add to cart</button>
                     <button onClick={() => { setCondition(!condition); setDataBaseCondition(false) }}>View cart {getData.length}</button>
                 </div>
-                <div>
+                <div key={v4()}>
                     {
                         (condition) ? getData.map(item => {
-                            return <div>
+                            return <div key={v4()}>
                                 <h4 key={item.itemName + v4()}>{item.itemName}</h4>
                                 <h4 key={item.itemId + v4()}>{item.itemId}</h4>
                                 <h4 key={item.itemPrice + v4()}>{item.itemPrice}</h4>
                             </div>
                         }) : null
                     }
+
                     {
-                        (dataBaseCondition) ? <h3 key={totalPrice + v4()}>{totalPrice}</h3> : "null"
+                        (dataBaseCondition) ? <div><h3 key={totalPrice + v4()}>{totalPrice}</h3></div> : "null"
                     }
                 </div>
             </div>
