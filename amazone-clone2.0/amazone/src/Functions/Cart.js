@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Cart.css'
 import { v4 } from 'uuid'
 
@@ -8,6 +8,7 @@ function Cart() {
 
     const [totalPrice, setTotalPrice] = useState([])
     const [price, setPrice] = useState([])
+    const [totalcount, setTotalcount] = useState(0)
 
     const [itemName, setItemName] = useState([])
     const [itemId, setItemId] = useState([])
@@ -17,45 +18,45 @@ function Cart() {
         {
             itemName: 'Tablet',
             itemId: 'first class',
-            itemPrice: 90000
+            itemPrice: 100
         },
         {
             itemName: 'PC',
             itemId: 'second class',
-            itemPrice: 120000
+            itemPrice: 200
         },
         {
             itemName: 'TV set',
             itemId: 'first class',
-            itemPrice: 1
+            itemPrice: 300
         },
         {
             itemName: 'Bugatti',
             itemId: 'Third class',
-            itemPrice: 65000000
+            itemPrice: 500
         }
     ])
 
-    const getCart = () => {
-        getData.map(item => {
-            setPrice((prev) => [...prev, item.itemPrice])
-        })
-    }
     const aggregatePrices = () => {
-        for (var i = 0; i < setPrice.length; i++) {
-            setTotalPrice(price[i] + price[i + 1])
-        }
-    }
-    const cartMainContainer = () => {
-        getCart()
-        aggregatePrices()
+        setTotalPrice(totalcount)
         setCondition(false)
         setDataBaseCondition(true)
     }
+    // set the total to the variable of settotal price
+    useEffect(() => {
+        getData.map(item => {
+            setPrice((prev) => [...prev, item.itemPrice])
+        })
+        for (var i = 0; i < price.length; i++) {
+            setTotalcount(totalcount + price[i])
+        }
+    }, [getData])
+
+    // end of the set to total variable function
+
     const addToCart = () => {
         setGetData(prev => [...prev, { itemName, itemId, itemPrice }])
     }
-
 
     return (
         <div className='cart_main_container'>
@@ -67,7 +68,7 @@ function Cart() {
                 </div>
                 <div>
                     <button onClick={() => { getData.pop() }}>delete from cart</button>
-                    <button onClick={() => { cartMainContainer() }}>Total Cart Price</button>
+                    <button onClick={() => { aggregatePrices() }}>Total Cart Price</button>
                     <button onClick={() => { addToCart() }}>Add to cart</button>
                     <button onClick={() => { setCondition(!condition); setDataBaseCondition(false) }}>View cart {getData.length}</button>
                 </div>
