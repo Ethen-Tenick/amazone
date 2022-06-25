@@ -6,8 +6,8 @@ function Cart() {
     const [condition, setCondition] = useState(false)
     const [dataBaseCondition, setDataBaseCondition] = useState(false)
 
-    const [totalPrice, setTotalPrice] = useState(0)
-    const [totalcount, setTotalcount] = useState(0)
+    const [sum, setSum] = useState([])
+    const [add, setAdd] = useState(0)
 
     const [itemName, setItemName] = useState([])
     const [itemId, setItemId] = useState([])
@@ -36,16 +36,25 @@ function Cart() {
         }
     ])
 
+
     const aggregatePrices = () => {
         getData.map(item => {
-            setTotalcount(totalcount + item.itemPrice)
-        }).then(() => {
-            setTotalPrice(totalcount)
-            setCondition(false)
-            setDataBaseCondition(true)
+            setSum(sum => [...sum, item.itemPrice])
         })
+
     }
 
+    const calculation = () => {
+        sum.map((each) => {
+            setAdd(add + each)
+        })
+    }
+    const additionCart = () => {
+        aggregatePrices()
+        calculation()
+        setCondition(false)
+        setDataBaseCondition(true)
+    }
     const addToCart = () => {
         setGetData(prev => [...prev, { itemName, itemId, itemPrice }])
     }
@@ -60,7 +69,7 @@ function Cart() {
                 </div>
                 <div>
                     <button onClick={() => { getData.pop() }}>delete from cart</button>
-                    <button onClick={() => { aggregatePrices() }}>Total Cart Price</button>
+                    <button onClick={() => { additionCart() }}>Total Cart Price</button>
                     <button onClick={() => { addToCart() }}>Add to cart</button>
                     <button onClick={() => { setCondition(!condition); setDataBaseCondition(false) }}>View cart {getData.length}</button>
                 </div>
@@ -77,11 +86,7 @@ function Cart() {
 
                     {
 
-                        (dataBaseCondition) ? totalPrice.map(totalPrice => {
-                            return <div key={v4()}>
-                                <h3 key={totalPrice + v4()}>{totalPrice}</h3>
-                            </div>
-                        }) : null
+                        (dataBaseCondition) ? <h4>{add}</h4> : null
                     }
                 </div>
             </div>
