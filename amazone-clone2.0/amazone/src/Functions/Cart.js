@@ -7,7 +7,7 @@ function Cart() {
     const [dataBaseCondition, setDataBaseCondition] = useState(false)
 
     const [totalPrice, setTotalPrice] = useState(0)
-    const [totalcount, setTotalcount] = useState([])
+    const [totalcount, setTotalcount] = useState(0)
 
     const [itemName, setItemName] = useState([])
     const [itemId, setItemId] = useState([])
@@ -37,26 +37,14 @@ function Cart() {
     ])
 
     const aggregatePrices = () => {
-        setTotalPrice(totalcount)
-        setCondition(false)
-        setDataBaseCondition(true)
-    }
-    // set the total to the variable of settotal price
-    useEffect(() => {
         getData.map(item => {
-            setTotalcount(prev => [...prev, (totalcount + item.itemPrice)])
+            setTotalcount(totalcount + item.itemPrice)
+        }).then(() => {
+            setTotalPrice(totalcount)
+            setCondition(false)
+            setDataBaseCondition(true)
         })
-
-        //var count = 0;
-        // for (var i = 0; i < totalcount.length; i++) {
-        //     count + totalcount[i]
-        // }
-        // setTotalPrice(count)
-        // console.log(totalcount)
-
-    }, [getData])
-
-    // end of the set to total variable function
+    }
 
     const addToCart = () => {
         setGetData(prev => [...prev, { itemName, itemId, itemPrice }])
@@ -88,7 +76,12 @@ function Cart() {
                     }
 
                     {
-                        (dataBaseCondition) ? <div><h3 key={totalPrice + v4()}>{totalPrice}</h3></div> : "null"
+
+                        (dataBaseCondition) ? totalPrice.map(totalPrice => {
+                            return <div key={v4()}>
+                                <h3 key={totalPrice + v4()}>{totalPrice}</h3>
+                            </div>
+                        }) : null
                     }
                 </div>
             </div>
