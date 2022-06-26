@@ -32,7 +32,7 @@ function App() {
               <img src='./Home_pngs/dropdown_icon.png' alt='drop' />
             </div>
             <div className='search_input'>
-              <input placeholder='gaming keybord' />
+              <input />
             </div>
             <div className='search_icon'>
               <img src='./Home_pngs/search_icon.png' alt='search' />
@@ -57,16 +57,29 @@ function App() {
           </div>
 
           <div className='cart'>
-            <img src='./Home_pngs/dropdown_icon.png' alt='' />
+            <img src='./Home_pngs/cart_icon.png' alt='png' />
             <h5>Cart</h5>
           </div>
         </div>
 
         <div className='bottom_div'>
-
+          <div className='bottom_sub_div'>
+            <img src='./Home_pngs/menu_icon.png' alt='menu' />
+            <h4>All</h4>
+          </div>
+          <div>Today's Deals</div>
+          <div>Customer Service</div>
+          <div>Registry</div>
+          <div>Gift Cards</div>
+          <div>Sell</div>
         </div>
 
       </div>
+
+
+
+
+
       <Home />
     </div>
   );

@@ -8,6 +8,7 @@
 	--headerBorder : 1px solid transparent;
 	--headerHoverBorder	: 1px solid white;
 	--headerBorderRadius : 3px;
+	--bottomDivFontWeight : 600;
 
 }
 
@@ -118,7 +119,26 @@
 .returns_orders:hover{
 	border:var(--headerHoverBorder);
 }
-
+.bottom_div{
+	display: flex;
+	align-items: center;
+	background-color: grey;
+	height: 40px;
+}
+.bottom_div div{
+	padding: 5px;
+	cursor: pointer;
+	font-weight:var(--bottomDivFontWeight) ;
+	border: var(--headerBorder);
+	border-radius: var(--headerBorderRadius);
+}
+.bottom_div div:hover{
+	border:var(--headerHoverBorder);
+}
+.bottom_sub_div{
+	display: flex;
+	margin-left: 10px;
+}
 
 
 
