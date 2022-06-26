@@ -3,6 +3,13 @@
 	margin: 0px;	
 	padding: 0px;
 }
+:root{
+	--headerPadding : 2px;
+	--headerBorder : 1px solid transparent;
+	--headerHoverBorder	: 1px solid white;
+	--headerBorderRadius : 3px;
+
+}
 
 .top_div{
 	display: flex;
@@ -10,22 +17,38 @@
 	justify-content: space-between;
 	color: white;
 	background-color: black;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	height: 50px;
 	width: 100%;
 }
 .amazone_image{
-	height: 100%;
+	height: 45px;
 	width: 200px;
+	border:var(--headerBorder);
+	border-radius: var(--headerBorderRadius);
+}
+.amazone_image:hover{
+	border:var(--headerHoverBorder);
 }
 .amazone_image img{
 	height: 100%;
 	width: 150px;
 	object-fit: cover;
 	cursor: pointer;
+	
 }
 .deliver_location{
+	width: fit-content;
+	height:45px ;
 	display: flex;
 	cursor: pointer;
+	border:var(--headerBorder);
+	border-radius: var(--headerBorderRadius);
+	padding: 2px;
+}
+.deliver_location:hover{
+	border:var(--headerHoverBorder);
 }
 .with_img img{
 	margin-top: 18px;
@@ -33,7 +56,6 @@
 .search_bar{
 	display: flex;
 	height: 40px;
-	background-color: #F1C40F;
 	border-radius: 5px;
 	overflow: hidden;
 }
@@ -45,26 +67,58 @@
 	border: none;
 	padding: 5px;
 }
+.search_icon{
+	cursor: pointer;
+	padding: 2px;
+	background-color: #F1C40F;
+	height: 100%;
+	
+}
 .dropdown_search_btn{
 	display: flex;
 	cursor: pointer;
+	padding: 5px;
+	height: 100%;
+	background-color: gray;
+}
+.signIn_tab{
+	cursor: pointer;
+	border: var(--headerBorder);
+	border-radius: var(--headerBorderRadius);
+	padding: 5px;
+}
+.signIn_tab:hover{
+	border:var(--headerHoverBorder);
 }
 .cart{
 	margin-right: 10px;
 	cursor: pointer;
+	border: var(--headerBorder);
+	border-radius: var(--headerBorderRadius);
+	padding: 5px;
 }
-.signIn_tab{
-	cursor: pointer;
+.cart:hover{
+	border:var(--headerHoverBorder);
 }
 .american_flag{
 	cursor: pointer;
+	border: var(--headerBorder);
+	border-radius:var(--headerBorderRadius);
+	padding: 5px;
+}
+.american_flag:hover{
+	border:var(--headerHoverBorder);
 }
 .returns_orders{
 	cursor: pointer;
+	border: var(--headerBorder);
+	border-radius: var(--headerBorderRadius);
+	padding: 5px;
 }
-.search_icon{
-	cursor: pointer;
+.returns_orders:hover{
+	border:var(--headerHoverBorder);
 }
+
 
 
 

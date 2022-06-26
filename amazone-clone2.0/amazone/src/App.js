@@ -40,7 +40,7 @@ function App() {
           </div>
 
           <div className='american_flag'>
-            <img src='./Home_pngs/american_flag.png' alt='' />
+            <img src='./Home_pngs/american_flag.png' alt='flag' />
             <img src='./Home_pngs/dropdown_icon.png' alt='' />
           </div>
 
