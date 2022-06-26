@@ -1,7 +1,76 @@
 *{
 	box-sizing: border-box;
-	background-color: cadetblue;
+	margin: 0px;	
+	padding: 0px;
 }
-.App {
-	text-align: center;
+
+.top_div{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: white;
+	background-color: black;
+	height: 50px;
+	width: 100%;
 }
+.amazone_image{
+	height: 100%;
+	width: 200px;
+}
+.amazone_image img{
+	height: 100%;
+	width: 150px;
+	object-fit: cover;
+	cursor: pointer;
+}
+.deliver_location{
+	display: flex;
+	cursor: pointer;
+}
+.with_img img{
+	margin-top: 18px;
+}
+.search_bar{
+	display: flex;
+	height: 40px;
+	background-color: #F1C40F;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.search_input input{
+	height: 100%;
+	width: 600px;
+	font-size: 20px;
+	outline: none;
+	border: none;
+	padding: 5px;
+}
+.dropdown_search_btn{
+	display: flex;
+	cursor: pointer;
+}
+.cart{
+	margin-right: 10px;
+	cursor: pointer;
+}
+.signIn_tab{
+	cursor: pointer;
+}
+.american_flag{
+	cursor: pointer;
+}
+.returns_orders{
+	cursor: pointer;
+}
+.search_icon{
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
