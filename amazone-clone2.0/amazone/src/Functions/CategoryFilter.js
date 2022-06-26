@@ -46,14 +46,14 @@ function CategoryFilter() {
     return (
         <div>
             {
-                (changeCondition) ? getData.map((item) => { item.price = item.price / 100 }) : null
+                (changeCondition) ? getData.map((item) => { item.price = item.price / 10 }) : null
             }
 
             <button onClick={() => { searchCategory('food'); setConditioncomp(false); setConditionfood(true) }}>Food</button>
             <button onClick={() => { searchCategory('computing'); setConditionfood(false); setConditioncomp(true) }}>Comp</button>
             <button onClick={(() => { setChangeCondition(!changeCondition) })}>change currency</button>
             {
-                (conditionfood || conditioncomp) ? items.map((item) => { return <div key={v4()}><h4 key={v4()}>{item.name}</h4><h4 key={v4()}>{item.price}</h4></div> }) : 'choose a category'
+                (!conditionfood || !conditioncomp) ? items.map((item) => { return <div key={v4()}><h4 key={v4()}>{item.name}</h4><h4 key={v4()}>{item.price}</h4></div> }) : 'choose a category'
             }
 
         </div>
