@@ -26,7 +26,38 @@ function App() {
             </div>
           </div>
 
+          <div className='search_bar'>
+            <div className='dropdown_search_btn'>
+              <h4>All</h4>
+              <img src='./Home_pngs/dropdown_icon.png' alt='' />
+            </div>
+            <div className='search_input'>
+              <input placeholder='gaming keybord' />
+            </div>
+            <img src='./Home_pngs/search_icon.png' alt='' />
+          </div>
 
+          <div className='american_flag'>
+            <img src='./Home_pngs/american_flag.png' alt='' />
+            <img src='./Home_pngs/dropdown_icon.png' alt='' />
+          </div>
+
+          <div className='signIn_tab'>
+            <h5>Hello,Sign In</h5>
+            <h4>Account & Lists
+              <img src='./Home_pngs/dropdown_icon.png' alt='' />
+            </h4>
+          </div>
+
+          <div className='returns_orders'>
+            <h5>Returns</h5>
+            <h4>& Orders</h4>
+          </div>
+
+          <div className='cart'>
+            <img src='./Home_pngs/dropdown_icon.png' />
+            <h5>Cart</h5>
+          </div>
         </div>
 
         <div className='bottom_div'>
