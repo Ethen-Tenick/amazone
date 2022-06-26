@@ -1,0 +1,25 @@
+.post_container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.postslide_container{
+    height: 300px;
+    width:95%;
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: white;
+}
+.postslide_container h3{
+    padding: 10px;
+    font-size: 20px;
+}
+.bulk_postslide{
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+
+}
+.postslide_container ::-webkit-scrollbar-track{
+    display: none;
+}

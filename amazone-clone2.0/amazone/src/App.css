@@ -3,6 +3,10 @@
 	margin: 0px;	
 	padding: 0px;
 }
+.App{
+	background-color: rgb(222, 225, 227);
+	padding-bottom: 50px;
+}
 :root{
 	--headerPadding : 2px;
 	--headerBorder : 1px solid transparent;

@@ -1,0 +1,10 @@
+.postslide_mini_container{
+    margin: 10px;
+    height: 220px;
+    width: 170px;
+}
+.postslide_mini_container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
