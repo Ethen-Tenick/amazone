@@ -13,100 +13,198 @@ function Home() {
     // take in props for image,title of slide pannel
     return (
         <div className='home_main_container'>
-            <div className='post_container'>
-                <Post
-                    linkDirection={<SignIn />}
-                    imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                    postTitle='Shop by Category'
-                    toShopLink='See more'
-                />
-                <Post
-                    linkDirection={<SignIn />}
-                    imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                    postTitle='Shop by Category'
-                    toShopLink='See more'
-                />
-                <Post
-                    linkDirection={<SignIn />}
-                    imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                    postTitle='Shop by Category'
-                    toShopLink='See more'
-                />
-                <Post
-                    linkDirection={<SignIn />}
-                    imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                    postTitle='Shop by Category'
-                    toShopLink='See more'
-                />
-                <Post
-                    linkDirection={<SignIn />}
-                    imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                    postTitle='Shop by Category'
-                    toShopLink='See more'
-                />
-                <Post
-                    linkDirection={<SignIn />}
-                    imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                    postTitle='Shop by Category'
-                    toShopLink='See more'
-                />
-                <Post
-                    linkDirection={<SignIn />}
-                    imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                    postTitle='Shop by Category'
-                    toShopLink='See more'
-                />
-                <Post
-                    linkDirection={<SignIn />}
-                    imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                    postTitle='Shop by Category'
-                    toShopLink='See more'
-                />
-            </div>
+            <div className='home_items_container'>
+                <div className='post_container'>
+                    <Post
+                        linkDirection={<SignIn />}
+                        imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                        postTitle='Shop by Category'
+                        toShopLink='See more'
+                    />
+                    <Post
+                        linkDirection={<SignIn />}
+                        imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                        postTitle='Shop by Category'
+                        toShopLink='See more'
+                    />
+                    <Post
+                        linkDirection={<SignIn />}
+                        imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                        postTitle='Shop by Category'
+                        toShopLink='See more'
+                    />
+                    <Post
+                        linkDirection={<SignIn />}
+                        imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                        postTitle='Shop by Category'
+                        toShopLink='See more'
+                    />
+                    <Post
+                        linkDirection={<SignIn />}
+                        imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                        postTitle='Shop by Category'
+                        toShopLink='See more'
+                    />
+                    <Post
+                        linkDirection={<SignIn />}
+                        imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                        postTitle='Shop by Category'
+                        toShopLink='See more'
+                    />
+                    <Post
+                        linkDirection={<SignIn />}
+                        imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                        postTitle='Shop by Category'
+                        toShopLink='See more'
+                    />
+                    <Post
+                        linkDirection={<SignIn />}
+                        imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                        postTitle='Shop by Category'
+                        toShopLink='See more'
+                    />
+                </div>
 
-            <div className='postslide_container'>
-                <h3>Most Wished for in Movies & Tv</h3>
-                <div className='bulk_postslide'>
-                    <PostSlide
-                        imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                        pageUrl='https://www.typing.com/student/tests'
+                <div className='postslide_container'>
+                    <h3>Most Wished for in Movies & Tv</h3>
+                    <div className='bulk_postslide'>
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                    </div>
+                </div>
+                <div className='post_container'>
+                    <Post
+                        linkDirection={<SignIn />}
+                        imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                        postTitle='Shop by Category'
+                        toShopLink='See more'
                     />
-                    <PostSlide
-                        imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                        pageUrl='https://www.typing.com/student/tests'
+                    <Post
+                        linkDirection={<SignIn />}
+                        imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                        postTitle='Shop by Category'
+                        toShopLink='See more'
                     />
-                    <PostSlide
-                        imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                        pageUrl='https://www.typing.com/student/tests'
+                    <Post
+                        linkDirection={<SignIn />}
+                        imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                        postTitle='Shop by Category'
+                        toShopLink='See more'
                     />
-                    <PostSlide
-                        imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                        pageUrl='https://www.typing.com/student/tests'
+                    <Post
+                        linkDirection={<SignIn />}
+                        imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                        postTitle='Shop by Category'
+                        toShopLink='See more'
                     />
-                    <PostSlide
-                        imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                        pageUrl='https://www.typing.com/student/tests'
+                    <Post
+                        linkDirection={<SignIn />}
+                        imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                        postTitle='Shop by Category'
+                        toShopLink='See more'
                     />
-                    <PostSlide
-                        imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                        pageUrl='https://www.typing.com/student/tests'
+                    <Post
+                        linkDirection={<SignIn />}
+                        imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                        postTitle='Shop by Category'
+                        toShopLink='See more'
                     />
-                    <PostSlide
-                        imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                        pageUrl='https://www.typing.com/student/tests'
+                    <Post
+                        linkDirection={<SignIn />}
+                        imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                        postTitle='Shop by Category'
+                        toShopLink='See more'
                     />
-                    <PostSlide
-                        imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                        pageUrl='https://www.typing.com/student/tests'
+                    <Post
+                        linkDirection={<SignIn />}
+                        imageLink='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                        postTitle='Shop by Category'
+                        toShopLink='See more'
                     />
-                    <PostSlide
-                        imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                        pageUrl='https://www.typing.com/student/tests'
-                    />
-                    <PostSlide
-                        imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
-                        pageUrl='https://www.typing.com/student/tests'
-                    />
+                </div>
+
+                <div className='postslide_container'>
+                    <h3>Most Wished for in Movies & Tv</h3>
+                    <div className='bulk_postslide'>
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                        <PostSlide
+                            imgUrl='https://starwarsblog.starwars.com/wp-content/uploads/2021/08/the-bad-batch-season-2-tall-A-36322.jpg'
+                            pageUrl='https://www.typing.com/student/tests'
+                        />
+                    </div>
                 </div>
             </div>
         </div>
