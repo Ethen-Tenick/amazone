@@ -6,7 +6,7 @@ function Cart() {
     const [condition, setCondition] = useState(false)
     const [dataBaseCondition, setDataBaseCondition] = useState(false)
 
-    const [sum, setSum] = useState([])
+    const [sum, setSum] = useState(0)
     const [add, setAdd] = useState(0)
 
     const [itemName, setItemName] = useState([])
@@ -39,22 +39,23 @@ function Cart() {
 
     const aggregatePrices = () => {
         getData.map(item => {
-            setSum(sum => [...sum, item.itemPrice])
+            setSum(sum => sum + item.itemPrice)
+            setDataBaseCondition(true)
         })
 
     }
 
-    const calculation = () => {
-        sum.map((each) => {
-            setAdd(add + each)
-        })
-    }
-    const additionCart = () => {
-        aggregatePrices()
-        calculation()
-        setCondition(false)
-        setDataBaseCondition(true)
-    }
+    // const calculation = () => {
+    //     sum.map((each) => {
+    //         setAdd(add + each)
+    //     })
+    // }
+    // const additionCart = () => {
+    //     aggregatePrices()
+    //     calculation()
+    //     setCondition(false)
+    //     setDataBaseCondition(true)
+    // }
     const addToCart = () => {
         setGetData(prev => [...prev, { itemName, itemId, itemPrice }])
     }
@@ -69,7 +70,7 @@ function Cart() {
                 </div>
                 <div>
                     <button onClick={() => { getData.pop() }}>delete from cart</button>
-                    <button onClick={() => { additionCart() }}>Total Cart Price</button>
+                    <button onClick={() => { setDataBaseCondition(!dataBaseCondition); setCondition(false); aggregatePrices() }}>Total Cart Price</button>
                     <button onClick={() => { addToCart() }}>Add to cart</button>
                     <button onClick={() => { setCondition(!condition); setDataBaseCondition(false) }}>View cart {getData.length}</button>
                 </div>
@@ -86,7 +87,7 @@ function Cart() {
 
                     {
 
-                        (dataBaseCondition) ? <h4>{add}</h4> : null
+                        (dataBaseCondition) ? <h4>{sum}</h4> : null
                     }
                 </div>
             </div>
