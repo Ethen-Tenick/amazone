@@ -1,0 +1,48 @@
+.cartitem_main_container{
+    padding: 20px;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    border-radius: 5px;
+    background-color: white;
+    margin-left: 20px;
+}
+input{
+    padding:10px;
+    border-radius: 5px;
+}
+.cartitem_main_container div{
+    padding-bottom: 5px;
+}
+.item_image{
+    margin-right: 10px;
+    padding: 10px;
+    margin-left: 10px;
+}
+.item_image img{
+    height: 150px;
+    width: 200px;
+    object-fit: cover;
+}
+.itemInfo{
+    display: flex;
+    flex-direction: column;
+    padding-right: 50px;
+}
+.is_gift{
+    display: flex;
+}
+.space-me{
+    padding:5px;
+}
+.last_item_div{
+    display: flex;
+}
+.last_item_div div{
+    margin-right: 10px;
+    padding:5px;
+}
+.the_current_price{
+    height:100%;
+    width:100px;
+}
